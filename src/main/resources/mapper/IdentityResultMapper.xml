@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mapper 就是用来做ORM映射的-->
+<mapper namespace="com.ghostben.image.dao.ResultMapper">
+    <select id="getResultList" resultType="com.ghostben.image.entity.dao.IdentityResultDao">
+       SELECT IDENTITY_ID, INDENTITY_RESULT, CREATE_TIME, UPDATE_TIME
+        FROM IDENTIFICATION
+        ORDER BY IDENTITY_ID
+        ASC
+    </select>
+
+    <select id="getResultById" resultType="com.ghostben.image.entity.dao.IdentityResultDao">
+        SELECT IDENTITY_ID, INDENTITY_RESULT, CREATE_TIME, UPDATE_TIME
+        FROM IDENTIFICATION
+         WHERE IDENTITY_ID=#{identityId}
+    </select>
+
+    <insert id="insertResult" parameterType="com.ghostben.image.entity.dao.IdentityResultDao"
+            keyColumn="IDENTITY_ID" useGeneratedKeys="true" keyProperty="identityId">
+        INSERT INTO IDENTIFICATION(INDENTITY_RESULT, CREATE_TIME, UPDATE_TIME)
+        VALUES
+               (#{identityResult},#{createTime},#{updateTime})
+    </insert>
+
+    <update id="updateResult" parameterType="com.ghostben.image.entity.dao.IdentityResultDao">
+        UPDATE IDENTIFICATION
+        <set>
+            <if test="identityResult != null">INDENTITY_RESULT=#{identityResult}</if>
+            <if test="CREATE_TIME != null">CREATE_TIME=#{createTime}</if>
+            <if test="UPDATE_TIME != null">UPDATE_TIME=#{updateTime}</if>
+        </set>
+        WHERE IDENTITY_ID=#{identityId}
+    </update>
+
+    <delete id="deleteResult">
+        DELETE FROM IDENTIFICATION
+        WHERE IDENTITY_ID=#{identityId}
+    </delete>
+
+</mapper>

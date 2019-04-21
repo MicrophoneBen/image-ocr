@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mapper 就是用来做ORM映射的-->
+<mapper namespace="com.ghostben.image.dao.ImageMapper">
+    <select id="getImagesList" resultType= "com.ghostben.image.entity.dao.ImagesDao">
+        SELECT IMAGE_ID, IMAGE_URL, CREATE_TIME, UPDATE_TIME
+        FROM IMAGE_UP
+        ORDER BY IMAGE_ID
+        ASC
+    </select>
+
+    <select id="getImagesUrlById" resultType= "com.ghostben.image.entity.dao.ImagesDao">
+        SELECT IMAGE_ID, IMAGE_URL, CREATE_TIME, UPDATE_TIME
+        FROM IMAGE_UP
+        WHERE IMAGE_ID=#{imageId}
+    </select>
+
+    <insert id="insertImagesUrl" parameterType="com.ghostben.image.entity.dao.ImagesDao"
+            keyColumn="IMAGE_ID" useGeneratedKeys="true" keyProperty="imageId">
+        INSERT INTO IMAGE_UP(IMAGE_URL, CREATE_TIME, UPDATE_TIME)
+        VALUES
+               (#{imageUrl},#{createTime},#{updateTime})
+    </insert>
+
+    <update id="updateImagesUrl" parameterType="com.ghostben.image.entity.dao.ImagesDao">
+        UPDATE IMAGE_UP
+        <set>
+            <if test="imageUrl != null">IMAGE_URL=#{imageUrl}</if>
+            <if test="createTime != null">CREATE_TIME=#{createTime}</if>
+            <if test="updateTime != null">UPDATE_TIME=#{updateTime}</if>
+        </set>
+        WHERE IMAGE_ID=#{ImageId}
+    </update>
+
+    <delete id="deleteImagesUrl">
+        DELETE FROM IMAGE_UP
+        WHERE IMAGE_ID=#{imageId}
+    </delete>
+
+</mapper>

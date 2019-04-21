@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" th:href="@{/icon/favicon.ico}" href="../../../../favicon.ico">
+
+    <title>图片识别系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/menu.css}" href="product.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <nav class="site-header sticky-top py-1" id="topbar" th:fragment="topnav">
+      <div class="container d-flex flex-column flex-md-row justify-content-between">
+        <a class="py-2" href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mx-auto"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+        </a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{upgeneral.html}" href="#">图片文字识别</a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{CarCard.html}">车牌号码识别</a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{upbankcard.html}">银行卡识别</a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{upIdCard.html}">身份证识别</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">手写汉字识别</a>
+        <a class="py-2 d-none d-md-inline-block" th:href="@{flowers.html}" href="#">植物花草识别</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">小动物识别</a>
+      </div>
+    </nav>
+
+
+
+    <footer class="container py-5">
+      <div class="row">
+        <div class="col-12 col-md">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="d-block mb-2"><circle cx="12" cy="12" r="10"></circle><line x1="14.31" y1="8" x2="20.05" y2="17.94"></line><line x1="9.69" y1="8" x2="21.17" y2="8"></line><line x1="7.38" y1="12" x2="13.12" y2="2.06"></line><line x1="9.69" y1="16" x2="3.95" y2="6.06"></line><line x1="14.31" y1="16" x2="2.83" y2="16"></line><line x1="16.62" y1="12" x2="10.88" y2="21.94"></line></svg>
+          <small class="d-block mb-3 text-muted">&copy; 2018-2019</small>
+        </div>
+        <div class="col-6 col-md">
+          <h5>角色</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Cool stuff</a></li>
+            <li><a class="text-muted" href="#">Random feature</a></li>
+            <li><a class="text-muted" href="#">Team feature</a></li>
+            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Another one</a></li>
+            <li><a class="text-muted" href="#">Last time</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>识别资源</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" th:href="@{upgeneral.html}">图片文字</a></li>
+            <li><a class="text-muted" th:href="@{upbankcard.html}">银行卡</a></li>
+            <li><a class="text-muted" th:href="@{upIdCard.html}">身份证</a></li>
+            <li><a class="text-muted" th:href="@{CarCard.html}">车牌号码</a></li>
+            <li><a class="text-muted" th:href="@{flowers.html}">植物</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>引用类别</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" th:href="@{https://github.com/eragonruan/text-detection-ctpn}">文字识别定位源码</a></li>
+            <li><a class="text-muted" th:href="@{https://arxiv.org/abs/1609.03605}">康奈尔大学原始论文</a></li>
+            <li><a class="text-muted" th:href="@{https://github.com/MicrophoneBen/chineseocr}">参考源码</a></li>
+            <li><a class="text-muted" th:href="@{}">本系统开源地址</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md">
+          <h5>关于我</h5>
+          <ul class="list-unstyled text-small">
+            <li><a class="text-muted" href="#">Team</a></li>
+            <li><a class="text-muted" href="#">Locations</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
+            <li><a class="text-muted" href="#">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script th:src="@{/jslib/popper.min.js}" src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script th:src="@{/jslib/bootstrap.min.js}" src="../../../../dist/js/bootstrap.min.js"></script>
+    <script th:src="@{/jslib/holder.min.js}"src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
+      Holder.addTheme('thumb', {
+        bg: '#55595c',
+        fg: '#eceeef',
+        text: 'Thumbnail'
+      });
+    </script>
+  </body>
+</html>

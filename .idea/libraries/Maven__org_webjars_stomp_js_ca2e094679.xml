@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.webjars:stomp-js:ca2e094679">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/stomp-js/ca2e094679/stomp-js-ca2e094679.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/stomp-js/ca2e094679/stomp-js-ca2e094679-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/webjars/stomp-js/ca2e094679/stomp-js-ca2e094679-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

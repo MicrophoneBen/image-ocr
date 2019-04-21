@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>通用文字转化识别</title>
+
+    <!--<script type="text/javascript" th:src="@{/zyupload/jquery-1.7.2.js}" src="js/jquery-1.7.2.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" th:href="@{zyupload/skins/zyupload-1.0.1.min.css}" href="zyupload/skins/zyupload-1.0.1.min.css" type="text/css">
+    <script type="text/javascript" th:src="@{zyupload/zyupload-1.0.1.min.js}" src="zyupload/zyupload-1.0.1.min.js"></script>
+
+    <!-- Bootstrap core CSS -->
+    <link th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}" href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link th:href="@{/css/menu.css}" href="product.css" rel="stylesheet">
+    <!-- Bootstrap core JavaScript
+        ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script th:src="@{/jslib/popper.min.js}" src="../../../../assets/js/vendor/popper.min.js"></script>
+    <script th:src="@{/jslib/bootstrap.min.js}" src="../../../../dist/js/bootstrap.min.js"></script>
+    <script th:src="@{/jslib/holder.min.js}"src="../../../../assets/js/vendor/holder.min.js"></script>
+    <script>
+        Holder.addTheme('thumb', {
+            bg: '#55595c',
+            fg: '#eceeef',
+            text: 'Thumbnail'
+        });
+    </script>
+<script type="text/javascript" th:src="@{/js/zyup_general.js}"></script>
+</head>
+<body>
+<!--使用模板名，使用fragement实现公共片段抽取。-->
+<div th:insert="~{index :: topnav}"></div>
+<div id="zyupload" class="zyupload"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/4.0.0/css/bootstrap.css}"
+          rel="stylesheet" media="screen"/>
+    <script type="text/javascript" th:src="@{/js/zyup_car.js}"></script>
+</head>
+<body>
+<div th:fragment="apk-form">
+    <form method="post" class="box-header with-border" action="" th:object="1.0.1"
+          id="dataFrom" enctype="multipart/form-data">
+        <input type="hidden" name="id" id="id"/>
+        <input type="hidden" name="url" id="url"/>
+        <input type="hidden" name="fileMd5" id="fileMd5"/>
+        <input type="hidden" name="version" id="version"/>
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+             aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="background: #3c8dbc;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel">新增</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="form-label col-3">版本说明：</label>
+                            <div class="formControls col-5">
+                                <textarea name="comment" id="comment" cols="" rows=""
+                                          class="textarea" style="width: 400px"
+                                          placeholder="说点什么...100个字符以内" dragonfly="true"></textarea>
+                                <p class="textarea-numberbar"><em class="textarea-length">0</em>/100
+                                </p>
+                            </div>
+                            <div class="col-4"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">上传版本：</label>
+                            <input type="file" name="uploadfile" id="uploadfile" multiple="multiple"
+                                   class="file-loading"/>
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal"><span
+                                class="glyphicon glyphicon-remove" aria-hidden="true"></span>关闭
+                        </button>
+                        <input class="btn btn-primary radius" type="button" onclick="save()"
+                               value="&nbsp;&nbsp;提交&nbsp;&nbsp;"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+</body>
+</html>

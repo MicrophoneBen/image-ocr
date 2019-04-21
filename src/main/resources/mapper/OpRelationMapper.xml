@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mapper 就是用来做ORM映射的-->
+<mapper namespace="com.ghostben.image.dao.OpRelationMapper">
+    <select id="getRelationList" resultType="com.ghostben.image.entity.dao.OperationRelation">
+        SELECT RELATION_ID, IMAGE_ID, IDENTITY_ID, CREATE_TIME, UPDATE_TIME
+        FROM OP_FUNC
+        ORDER BY RELATION_ID
+        ASC
+    </select>
+
+    <select id="getRelationById" resultType="com.ghostben.image.entity.dao.OperationRelation">
+        SELECT RELATION_ID, IMAGE_ID, IDENTITY_ID, CREATE_TIME, UPDATE_TIME
+        FROM OP_FUNC
+        WHERE RELATION_ID=#{relationId}
+    </select>
+
+    <insert id="insetRelation" parameterType="com.ghostben.image.entity.dao.OperationRelation"
+            keyColumn="RELATION_ID" useGeneratedKeys="true" keyProperty="relationId">
+        INSERT INTO OP_FUNC(IMAGE_ID, IDENTITY_ID, CREATE_TIME, UPDATE_TIME)
+        VALUES
+               (#{imageId},#{identityId}, #{createTime},#{updateTime})
+    </insert>
+
+    <update id="updateRelation" parameterType="com.ghostben.image.entity.dao.OperationRelation">
+        UPDATE OP_FUNC
+        <set>
+            <if test="imageId != null">IMAGE_ID=#{imageId}</if>
+            <if test="identityId != null"> IDENTITY_ID = #{identityId}</if>
+            <if test="createTime != null">CREATE_TIME=#{createTime}</if>
+            <if test="updateTime != null">UPDATE_TIME=#{updateTime}</if>
+        </set>
+        WHERE RELATION_ID=#{relationId}
+    </update>
+
+    <delete id="deleteRelation">
+        DELETE FROM OP_FUNC
+        WHERE RELATION_ID=#{relationId}
+    </delete>
+
+</mapper>

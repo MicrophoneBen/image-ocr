@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>银行卡信息识别</title>
+</head>
+<body>
+<div th:if="${not #strings.isEmpty(message)}">
+    <h2 th:text="${message}"></h2>
+</div>
+
+<hr/>
+<div>
+    此处展示上传后的图片：<img th:width="200px" th:height="200px" th:src="${picName}"/>
+</div>
+<br/>
+<hr/>
+<div width="80" height="80">
+    <h3> 银行卡识别结果 </h3>
+    <hr/>
+    <div width="80" height="80" th:color="green">
+        识别结果：<p th:text="${bankInfo}"></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+jdbc:
+  driver-class-name: com.mysql.jdbc.Driver
+  username: root
+  password: admin
+  url: jdbc:mysql://127.0.0.1:33060/AI_WEB_DB?useUnicode=true&CharacterEncoding=utf8&useSSL=false
+
+# Mybatis 配置
+sqlSession:
+  mybatisConfigFilePath: mybatis-config.xml
+  mapperPath: /mapper/**.xml
+  entityPackage: com.ghostben.image.entity.dao
